@@ -1,0 +1,152 @@
+openapi: "3.0.0"
+info:
+  title: Sample Pet Store API
+  version: "1.0.0"
+  description: A sample API that demonstrates AI-powered testing capabilities
+
+servers:
+  - url: https://petstore3.swagger.io/api/v3
+
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      in: header
+      name: api_key
+
+paths:
+  /pet:
+    get:
+      summary: Find all pets
+      tags: [pet]
+      parameters:
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [available, pending, sold]
+      responses:
+        "200":
+          description: Successful
+        "400":
+          description: Invalid status
+
+  /pet/{petId}:
+    get:
+      summary: Find pet by ID
+      tags: [pet]
+      parameters:
+        - name: petId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Successful
+        "404":
+          description: Pet not found
+
+    delete:
+      summary: Delete a pet
+      tags: [pet]
+      security:
+        - api_key: []
+      parameters:
+        - name: petId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Successful
+        "401":
+          description: Unauthorized
+
+  /pet/findByStatus:
+    get:
+      summary: Finds Pets by status
+      tags: [pet]
+      parameters:
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful
+
+  /store/inventory:
+    get:
+      summary: Returns pet inventories by status
+      tags: [store]
+      responses:
+        "200":
+          description: Successful
+
+  /store/order:
+    post:
+      summary: Place an order for a pet
+      tags: [store]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [petId, quantity]
+              properties:
+                petId:
+                  type: integer
+                  example: 10
+                quantity:
+                  type: integer
+                  example: 7
+                status:
+                  type: string
+                  enum: [placed, approved, delivered]
+      responses:
+        "200":
+          description: Successful
+        "400":
+          description: Invalid Order
+
+  /user/login:
+    get:
+      summary: Logs user into the system
+      tags: [user]
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful
+        "400":
+          description: Invalid credentials
+
+  /user/{username}:
+    get:
+      summary: Get user by username
+      tags: [user]
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful
+        "404":
+          description: User not found

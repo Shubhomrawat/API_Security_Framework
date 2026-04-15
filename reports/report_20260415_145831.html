@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI API Testing Report — Sample Pet Store API</title>
+<style>
+  :root {
+    --bg:#0d0d0d;--surface:#141414;--surface2:#1e1e1e;
+    --accent:#00e5ff;--accent2:#7c3aed;
+    --text:#e2e8f0;--muted:#64748b;
+    --pass:#10b981;--fail:#f43f5e;--warn:#f59e0b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',sans-serif;padding:2rem}
+  h1{color:var(--accent);font-size:2rem;margin-bottom:.25rem}
+  .meta{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
+  .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:2rem}
+  .card{background:var(--surface);border-radius:8px;padding:1.25rem;border-top:3px solid var(--accent)}
+  .card h3{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}
+  .card p{font-size:2rem;font-weight:700;color:var(--text)}
+  table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:8px;overflow:hidden;margin-bottom:2rem}
+  th{background:var(--surface2);padding:.75rem 1rem;text-align:left;font-size:.75rem;text-transform:uppercase;color:var(--muted)}
+  td{padding:.75rem 1rem;border-bottom:1px solid var(--surface2);font-size:.85rem}
+  tr:last-child td{border-bottom:none}
+  .badge{display:inline-block;padding:.2rem .6rem;border-radius:999px;font-size:.7rem;font-weight:700}
+  .pass{background:rgba(16,185,129,.2);color:var(--pass)}
+  .fail{background:rgba(244,63,94,.2);color:var(--fail)}
+  .critical{background:rgba(239,68,68,.2);color:#ef4444}
+  .high{background:rgba(244,63,94,.2);color:var(--fail)}
+  .medium{background:rgba(245,158,11,.2);color:var(--warn)}
+  .low{background:rgba(16,185,129,.2);color:var(--pass)}
+  .info{background:rgba(100,116,139,.2);color:var(--muted)}
+  h2{margin:1.5rem 0 .75rem;color:var(--accent);font-size:1.2rem}
+  .section{margin-bottom:2.5rem}
+  .diff-box{background:var(--surface);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;border-left:4px solid var(--accent)}
+  .diff-improved{border-left-color:var(--pass)}
+  .diff-regressed{border-left-color:var(--fail)}
+  .diff-unchanged{border-left-color:var(--muted)}
+  .conf-high{color:var(--pass)}
+  .conf-medium{color:var(--warn)}
+  .conf-low{color:var(--fail)}
+  .tag{display:inline-block;padding:.1rem .4rem;border-radius:4px;font-size:.7rem;background:var(--surface2);color:var(--muted);margin-right:.25rem}
+</style>
+</head>
+<body>
+<h1>🔬 AI API Testing Report</h1>
+<p class="meta">
+  API: <strong>Sample Pet Store API</strong> &nbsp;|&nbsp;
+  Generated: 2026-04-15 14:58:31 &nbsp;|&nbsp;
+  Provider: <strong>openai</strong> (gpt-4o)
+  &nbsp;|&nbsp; Run ID: <code>89b1498d-48e</code>
+</p>
+
+<div class="grid">
+  <div class="card"><h3>Total Tests</h3><p>56</p></div>
+  <div class="card"><h3>Passed</h3><p style="color:var(--pass)">36</p></div>
+  <div class="card"><h3>Failed</h3><p style="color:var(--fail)">20</p></div>
+  <div class="card"><h3>Pass Rate</h3><p>64.3%</p></div>
+  <div class="card"><h3>Security Findings</h3><p style="color:var(--warn)">12</p></div>
+</div>
+
+
+
+<div class="section">
+<h2>🔒 Security Findings (OWASP API Top 10)</h2>
+
+<table>
+  <thead><tr><th>OWASP</th><th>Severity</th><th>Title</th><th>Endpoint</th><th>Confidence</th><th>Source</th><th>Remediation</th></tr></thead>
+  <tbody>
+  
+  <tr>
+    <td>API2</td>
+    <td><span class="badge high">HIGH</span></td>
+    <td>Broken Authentication</td>
+    <td><code>GET /pet</code></td>
+    <td><span class="conf-high" title="Rule checked: auth tag present and status code is not 401/403.">
+      90% (high)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Enforce authentication on all protected endpoints. Return 401 when token is absent.</td>
+  </tr>
+  
+  <tr>
+    <td>API2</td>
+    <td><span class="badge high">HIGH</span></td>
+    <td>Broken Authentication</td>
+    <td><code>GET /pet/{petId}</code></td>
+    <td><span class="conf-high" title="Rule checked: auth tag present and status code is not 401/403.">
+      90% (high)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Enforce authentication on all protected endpoints. Return 401 when token is absent.</td>
+  </tr>
+  
+  <tr>
+    <td>API2</td>
+    <td><span class="badge high">HIGH</span></td>
+    <td>Broken Authentication</td>
+    <td><code>DELETE /pet/{petId}</code></td>
+    <td><span class="conf-high" title="Rule checked: auth tag present and status code is not 401/403.">
+      90% (high)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Enforce authentication on all protected endpoints. Return 401 when token is absent.</td>
+  </tr>
+  
+  <tr>
+    <td>API2</td>
+    <td><span class="badge high">HIGH</span></td>
+    <td>Broken Authentication</td>
+    <td><code>GET /pet/findByStatus</code></td>
+    <td><span class="conf-high" title="Rule checked: auth tag present and status code is not 401/403.">
+      90% (high)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Enforce authentication on all protected endpoints. Return 401 when token is absent.</td>
+  </tr>
+  
+  <tr>
+    <td>API2</td>
+    <td><span class="badge high">HIGH</span></td>
+    <td>Broken Authentication</td>
+    <td><code>GET /store/inventory</code></td>
+    <td><span class="conf-high" title="Rule checked: auth tag present and status code is not 401/403.">
+      90% (high)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Enforce authentication on all protected endpoints. Return 401 when token is absent.</td>
+  </tr>
+  
+  <tr>
+    <td>API2</td>
+    <td><span class="badge high">HIGH</span></td>
+    <td>Broken Authentication</td>
+    <td><code>POST /store/order</code></td>
+    <td><span class="conf-high" title="Rule checked: auth tag present and status code is not 401/403.">
+      90% (high)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Enforce authentication on all protected endpoints. Return 401 when token is absent.</td>
+  </tr>
+  
+  <tr>
+    <td>API2</td>
+    <td><span class="badge high">HIGH</span></td>
+    <td>Broken Authentication</td>
+    <td><code>GET /user/login</code></td>
+    <td><span class="conf-high" title="Rule checked: auth tag present and status code is not 401/403.">
+      90% (high)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Enforce authentication on all protected endpoints. Return 401 when token is absent.</td>
+  </tr>
+  
+  <tr>
+    <td>API2</td>
+    <td><span class="badge high">HIGH</span></td>
+    <td>Broken Authentication</td>
+    <td><code>GET /user/{username}</code></td>
+    <td><span class="conf-high" title="Rule checked: auth tag present and status code is not 401/403.">
+      90% (high)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Enforce authentication on all protected endpoints. Return 401 when token is absent.</td>
+  </tr>
+  
+  <tr>
+    <td>API6</td>
+    <td><span class="badge medium">MEDIUM</span></td>
+    <td>Unrestricted Access to Sensitive Business Flows</td>
+    <td><code>POST /store/order</code></td>
+    <td><span class="conf-medium" title="Fuzz payload on business flow endpoint succeeded. Confirm manually.">
+      70% (medium)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Add business logic validation, CAPTCHA, and anomaly detection on sensitive flows.</td>
+  </tr>
+  
+  <tr>
+    <td>API8</td>
+    <td><span class="badge low">LOW</span></td>
+    <td>Missing Security Headers</td>
+    <td><code>POST /store/order</code></td>
+    <td><span class="conf-high" title="Header absence is directly observable.">
+      85% (high)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Add HSTS, X-Content-Type-Options, X-Frame-Options, and CSP headers.</td>
+  </tr>
+  
+  <tr>
+    <td>API8</td>
+    <td><span class="badge low">LOW</span></td>
+    <td>Missing Security Headers</td>
+    <td><code>GET /user/login</code></td>
+    <td><span class="conf-high" title="Header absence is directly observable.">
+      85% (high)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Add HSTS, X-Content-Type-Options, X-Frame-Options, and CSP headers.</td>
+  </tr>
+  
+  <tr>
+    <td>API4</td>
+    <td><span class="badge low">LOW</span></td>
+    <td>Unrestricted Resource Consumption</td>
+    <td><code>POST /store/order</code></td>
+    <td><span class="conf-medium" title="Header absence is reliable; some APIs use WAF-level rate limiting not visible here.">
+      75% (medium)</span></td>
+    <td><span class="tag">rule</span></td>
+    <td>Implement rate limiting per client/IP and expose limit headers in every response.</td>
+  </tr>
+  
+  </tbody>
+</table>
+
+</div>
+
+<div class="section">
+<h2>📋 Test Results</h2>
+<table>
+  <thead><tr><th>Status</th><th>Test</th><th>Category</th><th>HTTP</th><th>Time (ms)</th><th>Failures</th></tr></thead>
+  <tbody>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[positive] GET /pet</td>
+    <td>functional</td>
+    <td>405</td>
+    <td>359</td>
+    <td>Expected 200, got 405</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[negative] GET /pet — wrong content-type</td>
+    <td>negative</td>
+    <td>405</td>
+    <td>348</td>
+    <td>Expected 400, got 405</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /pet — no-auth</td>
+    <td>security</td>
+    <td>405</td>
+    <td>326</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /pet — expired-token</td>
+    <td>security</td>
+    <td>405</td>
+    <td>338</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /pet — malformed-token</td>
+    <td>security</td>
+    <td>405</td>
+    <td>342</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[positive] GET /pet/{petId}</td>
+    <td>functional</td>
+    <td>400</td>
+    <td>188</td>
+    <td>Expected 200, got 400</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[negative] GET /pet/{petId} — wrong content-type</td>
+    <td>negative</td>
+    <td>400</td>
+    <td>183</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /pet/{petId} — no-auth</td>
+    <td>security</td>
+    <td>400</td>
+    <td>188</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /pet/{petId} — expired-token</td>
+    <td>security</td>
+    <td>400</td>
+    <td>188</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /pet/{petId} — malformed-token</td>
+    <td>security</td>
+    <td>400</td>
+    <td>190</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[positive] DELETE /pet/{petId}</td>
+    <td>functional</td>
+    <td>400</td>
+    <td>182</td>
+    <td>Expected 200, got 400</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[negative] DELETE /pet/{petId} — wrong content-type</td>
+    <td>negative</td>
+    <td>400</td>
+    <td>178</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] DELETE /pet/{petId} — no-auth</td>
+    <td>security</td>
+    <td>400</td>
+    <td>189</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] DELETE /pet/{petId} — expired-token</td>
+    <td>security</td>
+    <td>400</td>
+    <td>178</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] DELETE /pet/{petId} — malformed-token</td>
+    <td>security</td>
+    <td>400</td>
+    <td>187</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[positive] GET /pet/findByStatus</td>
+    <td>functional</td>
+    <td>400</td>
+    <td>185</td>
+    <td>Expected 200, got 400</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[negative] GET /pet/findByStatus — wrong content-type</td>
+    <td>negative</td>
+    <td>400</td>
+    <td>185</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /pet/findByStatus — no-auth</td>
+    <td>security</td>
+    <td>400</td>
+    <td>187</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /pet/findByStatus — expired-token</td>
+    <td>security</td>
+    <td>400</td>
+    <td>177</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /pet/findByStatus — malformed-token</td>
+    <td>security</td>
+    <td>400</td>
+    <td>188</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[positive] GET /store/inventory</td>
+    <td>functional</td>
+    <td>500</td>
+    <td>182</td>
+    <td>Expected 200, got 500</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[negative] GET /store/inventory — wrong content-type</td>
+    <td>negative</td>
+    <td>500</td>
+    <td>177</td>
+    <td>Expected 400, got 500</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /store/inventory — no-auth</td>
+    <td>security</td>
+    <td>500</td>
+    <td>173</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /store/inventory — expired-token</td>
+    <td>security</td>
+    <td>500</td>
+    <td>177</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /store/inventory — malformed-token</td>
+    <td>security</td>
+    <td>500</td>
+    <td>176</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[positive] POST /store/order</td>
+    <td>functional</td>
+    <td>200</td>
+    <td>177</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[negative] POST /store/order — empty body</td>
+    <td>negative</td>
+    <td>200</td>
+    <td>181</td>
+    <td>Expected 400, got 200</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[negative] POST /store/order — wrong content-type</td>
+    <td>negative</td>
+    <td>415</td>
+    <td>185</td>
+    <td>Expected 400, got 415</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — petId=-1</td>
+    <td>security</td>
+    <td>200</td>
+    <td>174</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — petId=0</td>
+    <td>security</td>
+    <td>200</td>
+    <td>174</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — petId=99999999</td>
+    <td>security</td>
+    <td>200</td>
+    <td>195</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — petId=None</td>
+    <td>security</td>
+    <td>200</td>
+    <td>195</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — petId=abc</td>
+    <td>security</td>
+    <td>400</td>
+    <td>183</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — quantity=-1</td>
+    <td>security</td>
+    <td>200</td>
+    <td>184</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — quantity=0</td>
+    <td>security</td>
+    <td>200</td>
+    <td>189</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — quantity=99999999</td>
+    <td>security</td>
+    <td>200</td>
+    <td>185</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — quantity=None</td>
+    <td>security</td>
+    <td>200</td>
+    <td>185</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — quantity=abc</td>
+    <td>security</td>
+    <td>400</td>
+    <td>190</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[fuzz] POST /store/order — status=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+    <td>security</td>
+    <td>200</td>
+    <td>187</td>
+    <td>Response is not valid JSON</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — status=</td>
+    <td>security</td>
+    <td>200</td>
+    <td>189</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — status=None</td>
+    <td>security</td>
+    <td>200</td>
+    <td>185</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — status=0</td>
+    <td>security</td>
+    <td>200</td>
+    <td>185</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[fuzz] POST /store/order — status=False</td>
+    <td>security</td>
+    <td>200</td>
+    <td>190</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[auth-bypass] POST /store/order — no-auth</td>
+    <td>security</td>
+    <td>400</td>
+    <td>182</td>
+    <td>Response is not valid JSON</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[auth-bypass] POST /store/order — expired-token</td>
+    <td>security</td>
+    <td>400</td>
+    <td>184</td>
+    <td>Response is not valid JSON</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[auth-bypass] POST /store/order — malformed-token</td>
+    <td>security</td>
+    <td>400</td>
+    <td>206</td>
+    <td>Response is not valid JSON</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[positive] GET /user/login</td>
+    <td>functional</td>
+    <td>200</td>
+    <td>193</td>
+    <td>Response is not valid JSON</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[negative] GET /user/login — wrong content-type</td>
+    <td>negative</td>
+    <td>200</td>
+    <td>207</td>
+    <td>Expected 400, got 200; Response is not valid JSON</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[auth-bypass] GET /user/login — no-auth</td>
+    <td>security</td>
+    <td>200</td>
+    <td>194</td>
+    <td>Response is not valid JSON</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[auth-bypass] GET /user/login — expired-token</td>
+    <td>security</td>
+    <td>200</td>
+    <td>196</td>
+    <td>Response is not valid JSON</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[auth-bypass] GET /user/login — malformed-token</td>
+    <td>security</td>
+    <td>200</td>
+    <td>185</td>
+    <td>Response is not valid JSON</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[positive] GET /user/{username}</td>
+    <td>functional</td>
+    <td>500</td>
+    <td>183</td>
+    <td>Expected 200, got 500</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge fail">FAIL</span></td>
+    <td>[negative] GET /user/{username} — wrong content-type</td>
+    <td>negative</td>
+    <td>500</td>
+    <td>196</td>
+    <td>Expected 400, got 500</td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /user/{username} — no-auth</td>
+    <td>security</td>
+    <td>500</td>
+    <td>189</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /user/{username} — expired-token</td>
+    <td>security</td>
+    <td>500</td>
+    <td>181</td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><span class="badge pass">PASS</span></td>
+    <td>[auth-bypass] GET /user/{username} — malformed-token</td>
+    <td>security</td>
+    <td>500</td>
+    <td>202</td>
+    <td></td>
+  </tr>
+  
+  </tbody>
+</table>
+</div>
+</body>
+</html>

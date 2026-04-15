@@ -1,0 +1,646 @@
+{
+  "run_id": "89b1498d-48e",
+  "api_title": "Sample Pet Store API",
+  "generated_at": "2026-04-15 14:58:31",
+  "provider": "openai",
+  "model": "gpt-4o",
+  "summary": {
+    "total": 56,
+    "passed": 36,
+    "failed": 20,
+    "pass_rate": 64.3
+  },
+  "diff_vs_previous": null,
+  "security_findings": [
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /pet returned 405 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/pet",
+      "method": "GET",
+      "evidence": "Status: 405",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /pet/{petId} returned 400 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/pet/{petId}",
+      "method": "GET",
+      "evidence": "Status: 400",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "DELETE /pet/{petId} returned 400 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/pet/{petId}",
+      "method": "DELETE",
+      "evidence": "Status: 400",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /pet/findByStatus returned 400 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/pet/findByStatus",
+      "method": "GET",
+      "evidence": "Status: 400",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /store/inventory returned 500 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/store/inventory",
+      "method": "GET",
+      "evidence": "Status: 500",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "POST /store/order returned 400 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/store/order",
+      "method": "POST",
+      "evidence": "Status: 400",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /user/login returned 200 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/user/login",
+      "method": "GET",
+      "evidence": "Status: 200",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /user/{username} returned 500 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/user/{username}",
+      "method": "GET",
+      "evidence": "Status: 500",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API6",
+      "title": "Unrestricted Access to Sensitive Business Flows",
+      "severity": "medium",
+      "description": "Sensitive business flow /store/order accepted a fuzz payload and returned success.",
+      "endpoint": "/store/order",
+      "method": "POST",
+      "evidence": "Fuzz test returned 200",
+      "remediation": "Add business logic validation, CAPTCHA, and anomaly detection on sensitive flows.",
+      "score": 4,
+      "confidence": 0.7,
+      "confidence_reason": "Fuzz payload on business flow endpoint succeeded. Confirm manually.",
+      "source": "rule",
+      "confidence_label": "medium"
+    },
+    {
+      "owasp_id": "API8",
+      "title": "Missing Security Headers",
+      "severity": "low",
+      "description": "POST /store/order is missing key security response headers.",
+      "endpoint": "/store/order",
+      "method": "POST",
+      "evidence": "Missing: x-content-type-options, x-frame-options, strict-transport-security, content-security-policy",
+      "remediation": "Add HSTS, X-Content-Type-Options, X-Frame-Options, and CSP headers.",
+      "score": 2,
+      "confidence": 0.85,
+      "confidence_reason": "Header absence is directly observable.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API8",
+      "title": "Missing Security Headers",
+      "severity": "low",
+      "description": "GET /user/login is missing key security response headers.",
+      "endpoint": "/user/login",
+      "method": "GET",
+      "evidence": "Missing: x-content-type-options, x-frame-options, strict-transport-security, content-security-policy",
+      "remediation": "Add HSTS, X-Content-Type-Options, X-Frame-Options, and CSP headers.",
+      "score": 2,
+      "confidence": 0.85,
+      "confidence_reason": "Header absence is directly observable.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API4",
+      "title": "Unrestricted Resource Consumption",
+      "severity": "low",
+      "description": "No rate-limit headers found on POST /store/order.",
+      "endpoint": "/store/order",
+      "method": "POST",
+      "evidence": "Missing X-RateLimit-*, RateLimit-*, or Retry-After headers",
+      "remediation": "Implement rate limiting per client/IP and expose limit headers in every response.",
+      "score": 2,
+      "confidence": 0.75,
+      "confidence_reason": "Header absence is reliable; some APIs use WAF-level rate limiting not visible here.",
+      "source": "rule",
+      "confidence_label": "medium"
+    }
+  ],
+  "test_results": [
+    {
+      "passed": false,
+      "name": "[positive] GET /pet",
+      "category": "functional",
+      "status_code": 405,
+      "elapsed_ms": 358.8577500000003,
+      "failure_summary": "Expected 200, got 405"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /pet \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 405,
+      "elapsed_ms": 347.62883299999993,
+      "failure_summary": "Expected 400, got 405"
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /pet \u2014 no-auth",
+      "category": "security",
+      "status_code": 405,
+      "elapsed_ms": 326.2810830000005,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /pet \u2014 expired-token",
+      "category": "security",
+      "status_code": 405,
+      "elapsed_ms": 338.45462500000065,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /pet \u2014 malformed-token",
+      "category": "security",
+      "status_code": 405,
+      "elapsed_ms": 341.9491249999993,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /pet/{petId}",
+      "category": "functional",
+      "status_code": 400,
+      "elapsed_ms": 187.70820900000018,
+      "failure_summary": "Expected 200, got 400"
+    },
+    {
+      "passed": true,
+      "name": "[negative] GET /pet/{petId} \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 400,
+      "elapsed_ms": 183.21900000000025,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /pet/{petId} \u2014 no-auth",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 187.62020800000022,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /pet/{petId} \u2014 expired-token",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 187.79912499999972,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /pet/{petId} \u2014 malformed-token",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 189.74324999999936,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[positive] DELETE /pet/{petId}",
+      "category": "functional",
+      "status_code": 400,
+      "elapsed_ms": 181.9828750000001,
+      "failure_summary": "Expected 200, got 400"
+    },
+    {
+      "passed": true,
+      "name": "[negative] DELETE /pet/{petId} \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 400,
+      "elapsed_ms": 177.8991249999997,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] DELETE /pet/{petId} \u2014 no-auth",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 189.1371660000001,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] DELETE /pet/{petId} \u2014 expired-token",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 177.93562499999993,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] DELETE /pet/{petId} \u2014 malformed-token",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 187.44970799999993,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /pet/findByStatus",
+      "category": "functional",
+      "status_code": 400,
+      "elapsed_ms": 185.05837500000055,
+      "failure_summary": "Expected 200, got 400"
+    },
+    {
+      "passed": true,
+      "name": "[negative] GET /pet/findByStatus \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 400,
+      "elapsed_ms": 185.36487500000032,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /pet/findByStatus \u2014 no-auth",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 187.38820899999985,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /pet/findByStatus \u2014 expired-token",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 176.73708300000078,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /pet/findByStatus \u2014 malformed-token",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 188.05333300000004,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /store/inventory",
+      "category": "functional",
+      "status_code": 500,
+      "elapsed_ms": 182.42708300000032,
+      "failure_summary": "Expected 200, got 500"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /store/inventory \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 500,
+      "elapsed_ms": 176.94945800000016,
+      "failure_summary": "Expected 400, got 500"
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /store/inventory \u2014 no-auth",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 173.47391599999983,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /store/inventory \u2014 expired-token",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 177.41158399999966,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /store/inventory \u2014 malformed-token",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 175.6719580000006,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[positive] POST /store/order",
+      "category": "functional",
+      "status_code": 200,
+      "elapsed_ms": 177.35062499999987,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[negative] POST /store/order \u2014 empty body",
+      "category": "negative",
+      "status_code": 200,
+      "elapsed_ms": 181.2739169999995,
+      "failure_summary": "Expected 400, got 200"
+    },
+    {
+      "passed": false,
+      "name": "[negative] POST /store/order \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 415,
+      "elapsed_ms": 185.14699999999974,
+      "failure_summary": "Expected 400, got 415"
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 petId=-1",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 174.45529099999925,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 petId=0",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 173.85575000000043,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 petId=99999999",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 195.26783299999994,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 petId=None",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 194.84504199999895,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 petId=abc",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 182.9140839999992,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 quantity=-1",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 184.26370800000046,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 quantity=0",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 188.89616599999925,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 quantity=99999999",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 184.91466599999916,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 quantity=None",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 185.48237499999942,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 quantity=abc",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 189.72595799999857,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] POST /store/order \u2014 status=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 187.33812500000013,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 status=",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 189.31054199999943,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 status=None",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 184.91812500000117,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 status=0",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 184.60154199999934,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /store/order \u2014 status=False",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 190.0913339999999,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] POST /store/order \u2014 no-auth",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 181.73766600000008,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] POST /store/order \u2014 expired-token",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 184.28933400000068,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] POST /store/order \u2014 malformed-token",
+      "category": "security",
+      "status_code": 400,
+      "elapsed_ms": 205.51816600000095,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /user/login",
+      "category": "functional",
+      "status_code": 200,
+      "elapsed_ms": 192.6479170000004,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /user/login \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 200,
+      "elapsed_ms": 207.14154100000036,
+      "failure_summary": "Expected 400, got 200; Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /user/login \u2014 no-auth",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 193.81074999999902,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /user/login \u2014 expired-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 196.25079099999886,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /user/login \u2014 malformed-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 185.03204199999956,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /user/{username}",
+      "category": "functional",
+      "status_code": 500,
+      "elapsed_ms": 182.7727079999999,
+      "failure_summary": "Expected 200, got 500"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /user/{username} \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 500,
+      "elapsed_ms": 195.62537500000053,
+      "failure_summary": "Expected 400, got 500"
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /user/{username} \u2014 no-auth",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 189.05424999999985,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /user/{username} \u2014 expired-token",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 181.22295799999932,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /user/{username} \u2014 malformed-token",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 202.32462499999926,
+      "failure_summary": ""
+    }
+  ]
+}

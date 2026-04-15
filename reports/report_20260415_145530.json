@@ -1,0 +1,874 @@
+{
+  "run_id": "672f2365-58f",
+  "api_title": "JSONPlaceholder API",
+  "generated_at": "2026-04-15 14:55:30",
+  "provider": "openai",
+  "model": "gpt-4o",
+  "summary": {
+    "total": 77,
+    "passed": 29,
+    "failed": 48,
+    "pass_rate": 37.7
+  },
+  "diff_vs_previous": null,
+  "security_findings": [
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /posts returned 200 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/posts",
+      "method": "GET",
+      "evidence": "Status: 200",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "POST /posts returned 201 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/posts",
+      "method": "POST",
+      "evidence": "Status: 201",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /posts/{id} returned 404 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/posts/{id}",
+      "method": "GET",
+      "evidence": "Status: 404",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "PUT /posts/{id} returned 500 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/posts/{id}",
+      "method": "PUT",
+      "evidence": "Status: 500",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "DELETE /posts/{id} returned 200 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/posts/{id}",
+      "method": "DELETE",
+      "evidence": "Status: 200",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /users returned 200 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/users",
+      "method": "GET",
+      "evidence": "Status: 200",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /users/{id} returned 404 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/users/{id}",
+      "method": "GET",
+      "evidence": "Status: 404",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /comments returned 200 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/comments",
+      "method": "GET",
+      "evidence": "Status: 200",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /todos returned 200 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/todos",
+      "method": "GET",
+      "evidence": "Status: 200",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API2",
+      "title": "Broken Authentication",
+      "severity": "high",
+      "description": "GET /todos/{id} returned 404 on an unauthenticated request (expected 401/403).",
+      "endpoint": "/todos/{id}",
+      "method": "GET",
+      "evidence": "Status: 404",
+      "remediation": "Enforce authentication on all protected endpoints. Return 401 when token is absent.",
+      "score": 7,
+      "confidence": 0.9,
+      "confidence_reason": "Rule checked: auth tag present and status code is not 401/403.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API3",
+      "title": "Broken Object Property Level Authorization",
+      "severity": "medium",
+      "description": "GET /users may expose sensitive properties in response.",
+      "endpoint": "/users",
+      "method": "GET",
+      "evidence": "Sensitive field patterns found: ssn",
+      "remediation": "Filter sensitive properties from API responses. Use allowlists, not blocklists.",
+      "score": 4,
+      "confidence": 0.65,
+      "confidence_reason": "Pattern match on field names; confirm fields contain real sensitive data.",
+      "source": "rule",
+      "confidence_label": "medium"
+    },
+    {
+      "owasp_id": "API8",
+      "title": "Missing Security Headers",
+      "severity": "low",
+      "description": "GET /posts is missing key security response headers.",
+      "endpoint": "/posts",
+      "method": "GET",
+      "evidence": "Missing: x-frame-options, strict-transport-security, content-security-policy",
+      "remediation": "Add HSTS, X-Content-Type-Options, X-Frame-Options, and CSP headers.",
+      "score": 2,
+      "confidence": 0.85,
+      "confidence_reason": "Header absence is directly observable.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API8",
+      "title": "Missing Security Headers",
+      "severity": "low",
+      "description": "DELETE /posts/{id} is missing key security response headers.",
+      "endpoint": "/posts/{id}",
+      "method": "DELETE",
+      "evidence": "Missing: x-frame-options, strict-transport-security, content-security-policy",
+      "remediation": "Add HSTS, X-Content-Type-Options, X-Frame-Options, and CSP headers.",
+      "score": 2,
+      "confidence": 0.85,
+      "confidence_reason": "Header absence is directly observable.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API8",
+      "title": "Missing Security Headers",
+      "severity": "low",
+      "description": "GET /users is missing key security response headers.",
+      "endpoint": "/users",
+      "method": "GET",
+      "evidence": "Missing: x-frame-options, strict-transport-security, content-security-policy",
+      "remediation": "Add HSTS, X-Content-Type-Options, X-Frame-Options, and CSP headers.",
+      "score": 2,
+      "confidence": 0.85,
+      "confidence_reason": "Header absence is directly observable.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API8",
+      "title": "Missing Security Headers",
+      "severity": "low",
+      "description": "GET /comments is missing key security response headers.",
+      "endpoint": "/comments",
+      "method": "GET",
+      "evidence": "Missing: x-frame-options, strict-transport-security, content-security-policy",
+      "remediation": "Add HSTS, X-Content-Type-Options, X-Frame-Options, and CSP headers.",
+      "score": 2,
+      "confidence": 0.85,
+      "confidence_reason": "Header absence is directly observable.",
+      "source": "rule",
+      "confidence_label": "high"
+    },
+    {
+      "owasp_id": "API8",
+      "title": "Missing Security Headers",
+      "severity": "low",
+      "description": "GET /todos is missing key security response headers.",
+      "endpoint": "/todos",
+      "method": "GET",
+      "evidence": "Missing: x-frame-options, strict-transport-security, content-security-policy",
+      "remediation": "Add HSTS, X-Content-Type-Options, X-Frame-Options, and CSP headers.",
+      "score": 2,
+      "confidence": 0.85,
+      "confidence_reason": "Header absence is directly observable.",
+      "source": "rule",
+      "confidence_label": "high"
+    }
+  ],
+  "test_results": [
+    {
+      "passed": false,
+      "name": "[positive] GET /posts",
+      "category": "functional",
+      "status_code": 200,
+      "elapsed_ms": 159.68858299999943,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /posts \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 200,
+      "elapsed_ms": 148.77341700000014,
+      "failure_summary": "Expected 400, got 200; Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /posts \u2014 no-auth",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 160.99937500000027,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /posts \u2014 expired-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 156.22962499999994,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /posts \u2014 malformed-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 158.70587499999988,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[positive] POST /posts",
+      "category": "functional",
+      "status_code": 201,
+      "elapsed_ms": 157.88029100000057,
+      "failure_summary": "Expected 200, got 201"
+    },
+    {
+      "passed": false,
+      "name": "[negative] POST /posts \u2014 empty body",
+      "category": "negative",
+      "status_code": 201,
+      "elapsed_ms": 171.56591700000058,
+      "failure_summary": "Expected 400, got 201"
+    },
+    {
+      "passed": false,
+      "name": "[negative] POST /posts \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 201,
+      "elapsed_ms": 162.9204169999996,
+      "failure_summary": "Expected 400, got 201"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] POST /posts \u2014 title=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 223.56320899999992,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 title=",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 166.58883399999968,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 title=None",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 157.74533300000027,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 title=0",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 155.54191699999987,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 title=False",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 162.17520899999994,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] POST /posts \u2014 body=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 205.20362499999933,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 body=",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 155.9860000000004,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 body=None",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 166.49183399999944,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 body=0",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 159.89291700000052,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 body=False",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 156.33270799999988,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 userId=-1",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 159.02700000000004,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 userId=0",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 166.29112499999988,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 userId=99999999",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 159.52524999999974,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 userId=None",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 164.86787500000054,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[fuzz] POST /posts \u2014 userId=abc",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 163.96579099999985,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] POST /posts \u2014 no-auth",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 160.11079200000023,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] POST /posts \u2014 expired-token",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 159.94000000000062,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] POST /posts \u2014 malformed-token",
+      "category": "security",
+      "status_code": 201,
+      "elapsed_ms": 164.9210409999995,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /posts/{id}",
+      "category": "functional",
+      "status_code": 404,
+      "elapsed_ms": 148.3330830000007,
+      "failure_summary": "Expected 200, got 404"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /posts/{id} \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 404,
+      "elapsed_ms": 147.4238330000004,
+      "failure_summary": "Expected 400, got 404"
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /posts/{id} \u2014 no-auth",
+      "category": "security",
+      "status_code": 404,
+      "elapsed_ms": 165.14562500000008,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /posts/{id} \u2014 expired-token",
+      "category": "security",
+      "status_code": 404,
+      "elapsed_ms": 153.64183300000002,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /posts/{id} \u2014 malformed-token",
+      "category": "security",
+      "status_code": 404,
+      "elapsed_ms": 146.71112500000038,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[positive] PUT /posts/{id}",
+      "category": "functional",
+      "status_code": 500,
+      "elapsed_ms": 163.069417,
+      "failure_summary": "Expected 200, got 500; Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[negative] PUT /posts/{id} \u2014 empty body",
+      "category": "negative",
+      "status_code": 500,
+      "elapsed_ms": 160.81524999999974,
+      "failure_summary": "Expected 400, got 500; Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[negative] PUT /posts/{id} \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 500,
+      "elapsed_ms": 177.33250000000032,
+      "failure_summary": "Expected 400, got 500; Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] PUT /posts/{id} \u2014 title=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 178.8560419999996,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] PUT /posts/{id} \u2014 title=",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 176.00233299999957,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] PUT /posts/{id} \u2014 title=None",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 166.15720800000045,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] PUT /posts/{id} \u2014 title=0",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 170.58170899999948,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] PUT /posts/{id} \u2014 title=False",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 177.19662500000055,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] PUT /posts/{id} \u2014 body=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 173.78558299999992,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] PUT /posts/{id} \u2014 body=",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 175.76775000000032,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] PUT /posts/{id} \u2014 body=None",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 173.54312500000015,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] PUT /posts/{id} \u2014 body=0",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 168.8818329999995,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[fuzz] PUT /posts/{id} \u2014 body=False",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 167.61241699999997,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] PUT /posts/{id} \u2014 no-auth",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 168.62695799999995,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] PUT /posts/{id} \u2014 expired-token",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 176.7009590000006,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] PUT /posts/{id} \u2014 malformed-token",
+      "category": "security",
+      "status_code": 500,
+      "elapsed_ms": 169.61091699999997,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": true,
+      "name": "[positive] DELETE /posts/{id}",
+      "category": "functional",
+      "status_code": 200,
+      "elapsed_ms": 164.58337499999942,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[negative] DELETE /posts/{id} \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 200,
+      "elapsed_ms": 168.16987499999937,
+      "failure_summary": "Expected 400, got 200"
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] DELETE /posts/{id} \u2014 no-auth",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 168.73062499999935,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] DELETE /posts/{id} \u2014 expired-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 167.07429199999967,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] DELETE /posts/{id} \u2014 malformed-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 178.83179100000035,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /users",
+      "category": "functional",
+      "status_code": 200,
+      "elapsed_ms": 154.95170799999957,
+      "failure_summary": "Response is not valid JSON; Pattern matched: \\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b; Pattern matched: ssn|s"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /users \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 200,
+      "elapsed_ms": 156.00691699999913,
+      "failure_summary": "Expected 400, got 200; Response is not valid JSON; Pattern matched: \\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b;"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /users \u2014 no-auth",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 153.18229199999854,
+      "failure_summary": "Response is not valid JSON; Pattern matched: \\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b; Pattern matched: ssn|s"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /users \u2014 expired-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 154.27462499999933,
+      "failure_summary": "Response is not valid JSON; Pattern matched: \\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b; Pattern matched: ssn|s"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /users \u2014 malformed-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 155.20183399999965,
+      "failure_summary": "Response is not valid JSON; Pattern matched: \\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b; Pattern matched: ssn|s"
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /users/{id}",
+      "category": "functional",
+      "status_code": 404,
+      "elapsed_ms": 147.70441699999992,
+      "failure_summary": "Expected 200, got 404"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /users/{id} \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 404,
+      "elapsed_ms": 157.68875000000014,
+      "failure_summary": "Expected 400, got 404"
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /users/{id} \u2014 no-auth",
+      "category": "security",
+      "status_code": 404,
+      "elapsed_ms": 148.29779100000096,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /users/{id} \u2014 expired-token",
+      "category": "security",
+      "status_code": 404,
+      "elapsed_ms": 145.59987500000028,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /users/{id} \u2014 malformed-token",
+      "category": "security",
+      "status_code": 404,
+      "elapsed_ms": 153.59737500000037,
+      "failure_summary": ""
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /comments",
+      "category": "functional",
+      "status_code": 200,
+      "elapsed_ms": 147.20316699999893,
+      "failure_summary": "Pattern matched: \\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /comments \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 200,
+      "elapsed_ms": 182.2468749999988,
+      "failure_summary": "Expected 400, got 200; Response is not valid JSON; Pattern matched: \\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /comments \u2014 no-auth",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 180.32562500000006,
+      "failure_summary": "Response is not valid JSON; Pattern matched: \\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /comments \u2014 expired-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 170.28879100000083,
+      "failure_summary": "Response is not valid JSON; Pattern matched: \\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /comments \u2014 malformed-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 174.24091700000054,
+      "failure_summary": "Response is not valid JSON; Pattern matched: \\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b"
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /todos",
+      "category": "functional",
+      "status_code": 200,
+      "elapsed_ms": 169.26491699999957,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /todos \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 200,
+      "elapsed_ms": 168.3024159999995,
+      "failure_summary": "Expected 400, got 200; Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /todos \u2014 no-auth",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 167.8753749999995,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /todos \u2014 expired-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 161.34324999999984,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[auth-bypass] GET /todos \u2014 malformed-token",
+      "category": "security",
+      "status_code": 200,
+      "elapsed_ms": 167.45708400000046,
+      "failure_summary": "Response is not valid JSON"
+    },
+    {
+      "passed": false,
+      "name": "[positive] GET /todos/{id}",
+      "category": "functional",
+      "status_code": 404,
+      "elapsed_ms": 149.0362919999999,
+      "failure_summary": "Expected 200, got 404"
+    },
+    {
+      "passed": false,
+      "name": "[negative] GET /todos/{id} \u2014 wrong content-type",
+      "category": "negative",
+      "status_code": 404,
+      "elapsed_ms": 150.50324999999987,
+      "failure_summary": "Expected 400, got 404"
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /todos/{id} \u2014 no-auth",
+      "category": "security",
+      "status_code": 404,
+      "elapsed_ms": 148.60870900000123,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /todos/{id} \u2014 expired-token",
+      "category": "security",
+      "status_code": 404,
+      "elapsed_ms": 144.9159170000005,
+      "failure_summary": ""
+    },
+    {
+      "passed": true,
+      "name": "[auth-bypass] GET /todos/{id} \u2014 malformed-token",
+      "category": "security",
+      "status_code": 404,
+      "elapsed_ms": 138.27341600000054,
+      "failure_summary": ""
+    }
+  ]
+}

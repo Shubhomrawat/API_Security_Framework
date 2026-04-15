@@ -1,0 +1,656 @@
+2026-04-15 14:03:41,389 | api_understanding_agent | INFO | [APIUnderstandingAgent] Analyzing API spec …
+2026-04-15 14:03:41,398 | parser | INFO | Parsing spec: Sample Pet Store API
+2026-04-15 14:03:41,399 | parser | INFO | Discovered 8 endpoints
+2026-04-15 14:03:47,050 | api_understanding_agent | WARNING | LLM enrichment failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:03:47,054 | api_understanding_agent | INFO | [APIUnderstandingAgent] 8 endpoints understood (provider: openai)
+2026-04-15 14:03:47,066 | test_generation_agent | INFO | [TestGenerationAgent] Generating tests for 8 endpoints …
+2026-04-15 14:03:50,764 | test_generation_agent | WARNING | LLM creative test generation failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:03:50,768 | test_generation_agent | INFO | [TestGenerationAgent] Generated 56 test cases (provider: openai)
+2026-04-15 14:03:50,775 | execution_agent | INFO | [ExecutionAgent] Running 56 test cases …
+2026-04-15 14:07:07,684 | api_understanding_agent | INFO | [APIUnderstandingAgent] Analyzing API spec …
+2026-04-15 14:07:07,692 | parser | INFO | Parsing spec: Sample Pet Store API
+2026-04-15 14:07:07,693 | parser | INFO | Discovered 8 endpoints
+2026-04-15 14:07:11,332 | api_understanding_agent | WARNING | LLM enrichment failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:07:11,338 | api_understanding_agent | INFO | [APIUnderstandingAgent] 8 endpoints understood (provider: openai)
+2026-04-15 14:07:11,349 | test_generation_agent | INFO | [TestGenerationAgent] Generating tests for 8 endpoints …
+2026-04-15 14:07:15,395 | test_generation_agent | WARNING | LLM creative test generation failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:07:15,398 | test_generation_agent | INFO | [TestGenerationAgent] Generated 56 test cases (provider: openai)
+2026-04-15 14:07:15,403 | execution_agent | INFO | [ExecutionAgent] Running 56 test cases …
+2026-04-15 14:09:07,263 | api_understanding_agent | INFO | [APIUnderstandingAgent] Analyzing API spec …
+2026-04-15 14:09:07,271 | parser | INFO | Parsing spec: Sample Pet Store API
+2026-04-15 14:09:07,272 | parser | INFO | Discovered 8 endpoints
+2026-04-15 14:09:10,578 | api_understanding_agent | WARNING | LLM enrichment failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:09:10,582 | api_understanding_agent | INFO | [APIUnderstandingAgent] 8 endpoints understood (provider: openai)
+2026-04-15 14:09:10,599 | test_generation_agent | INFO | [TestGenerationAgent] Generating tests for 8 endpoints …
+2026-04-15 14:09:13,861 | test_generation_agent | WARNING | LLM creative test generation failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:09:13,865 | test_generation_agent | INFO | [TestGenerationAgent] Generated 56 test cases (provider: openai)
+2026-04-15 14:09:13,868 | execution_agent | INFO | [ExecutionAgent] Running 56 test cases ...
+2026-04-15 14:09:14,166 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (281.2ms)
+2026-04-15 14:09:14,194 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (310.6ms)
+2026-04-15 14:09:14,198 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (312.8ms)
+2026-04-15 14:09:14,201 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (318.0ms)
+2026-04-15 14:09:14,202 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (329.7ms)
+2026-04-15 14:09:14,357 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (188.1ms)
+2026-04-15 14:09:14,381 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (184.5ms)
+2026-04-15 14:09:14,385 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (181.3ms)
+2026-04-15 14:09:14,390 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (185.5ms)
+2026-04-15 14:09:14,397 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (196.2ms)
+2026-04-15 14:09:14,546 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (187.5ms)
+2026-04-15 14:09:14,565 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (178.2ms)
+2026-04-15 14:09:14,571 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (179.9ms)
+2026-04-15 14:09:14,577 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (194.0ms)
+2026-04-15 14:09:14,588 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (190.0ms)
+2026-04-15 14:09:14,727 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (178.9ms)
+2026-04-15 14:09:14,744 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (177.5ms)
+2026-04-15 14:09:14,760 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (184.9ms)
+2026-04-15 14:09:14,763 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (183.8ms)
+2026-04-15 14:09:14,787 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (196.2ms)
+2026-04-15 14:09:14,910 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (180.7ms)
+2026-04-15 14:09:14,928 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (181.9ms)
+2026-04-15 14:09:14,954 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (192.2ms)
+2026-04-15 14:09:14,960 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (195.6ms)
+2026-04-15 14:09:14,972 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (182.6ms)
+2026-04-15 14:09:15,114 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (201.6ms)
+2026-04-15 14:09:15,158 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (227.9ms)
+2026-04-15 14:09:15,195 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 415 (228.9ms)
+2026-04-15 14:09:15,197 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (213.1ms)
+2026-04-15 14:09:15,199 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (231.2ms)
+2026-04-15 14:09:15,308 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (193.2ms)
+2026-04-15 14:09:15,347 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (187.4ms)
+2026-04-15 14:09:15,381 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (183.0ms)
+2026-04-15 14:09:15,383 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (182.5ms)
+2026-04-15 14:09:15,392 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (193.1ms)
+2026-04-15 14:09:15,505 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (192.4ms)
+2026-04-15 14:09:15,537 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (186.9ms)
+2026-04-15 14:09:15,560 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (178.1ms)
+2026-04-15 14:09:15,578 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (193.4ms)
+2026-04-15 14:09:15,579 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (186.4ms)
+2026-04-15 14:09:15,687 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (180.7ms)
+2026-04-15 14:09:15,732 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (193.8ms)
+2026-04-15 14:09:15,745 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (181.5ms)
+2026-04-15 14:09:15,764 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (183.1ms)
+2026-04-15 14:09:15,766 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (184.9ms)
+2026-04-15 14:09:15,891 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (201.9ms)
+2026-04-15 14:09:15,929 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (181.8ms)
+2026-04-15 14:09:15,931 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (197.5ms)
+2026-04-15 14:09:15,949 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (184.1ms)
+2026-04-15 14:09:15,956 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (188.9ms)
+2026-04-15 14:09:16,080 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (187.6ms)
+2026-04-15 14:09:16,123 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (189.6ms)
+2026-04-15 14:09:16,125 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (193.5ms)
+2026-04-15 14:09:16,127 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (176.3ms)
+2026-04-15 14:09:16,267 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (184.5ms)
+2026-04-15 14:09:16,310 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (352.4ms)
+2026-04-15 14:09:16,312 | execution_agent | INFO | [ExecutionAgent] Completed 56/56 without network error
+2026-04-15 14:09:16,314 | validation_agent | INFO | [ValidationAgent] Validating 56 results …
+2026-04-15 14:09:16,321 | validation_agent | INFO | [ValidationAgent] 20 failures detected
+2026-04-15 14:09:16,328 | security_agent | INFO | [SecurityAgent] Scanning 56 results …
+2026-04-15 14:09:19,492 | security_agent | WARNING | LLM security scan failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:09:19,495 | security_agent | INFO | [SecurityAgent] 12 findings (0 critical, 8 high)
+2026-04-15 14:09:19,504 | history | INFO | [History] Saved run 6e848c20-5f0
+2026-04-15 14:09:19,525 | reporting_agent | INFO | [ReportingAgent] HTML report → reports/report_20260415_140919.html
+2026-04-15 14:09:19,527 | reporting_agent | INFO | [ReportingAgent] JSON report → reports/report_20260415_140919.json
+2026-04-15 14:20:24,352 | api_understanding_agent | INFO | [APIUnderstandingAgent] Analyzing API spec …
+2026-04-15 14:20:24,360 | parser | INFO | Parsing spec: Sample Pet Store API
+2026-04-15 14:20:24,360 | parser | INFO | Discovered 8 endpoints
+2026-04-15 14:20:27,498 | api_understanding_agent | WARNING | LLM enrichment failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:20:27,500 | api_understanding_agent | INFO | [APIUnderstandingAgent] 8 endpoints understood (provider: openai)
+2026-04-15 14:20:27,510 | test_generation_agent | INFO | [TestGenerationAgent] Generating tests for 8 endpoints …
+2026-04-15 14:20:30,663 | test_generation_agent | WARNING | LLM creative test generation failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:20:30,667 | test_generation_agent | INFO | [TestGenerationAgent] Generated 56 test cases (provider: openai)
+2026-04-15 14:20:30,670 | execution_agent | INFO | [ExecutionAgent] Running 56 test cases ...
+2026-04-15 14:20:30,989 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (304.8ms)
+2026-04-15 14:20:31,019 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (332.5ms)
+2026-04-15 14:20:31,021 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (347.8ms)
+2026-04-15 14:20:31,026 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (342.5ms)
+2026-04-15 14:20:31,027 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (342.1ms)
+2026-04-15 14:20:31,182 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (189.4ms)
+2026-04-15 14:20:31,212 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (187.7ms)
+2026-04-15 14:20:31,221 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (191.9ms)
+2026-04-15 14:20:31,224 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (198.2ms)
+2026-04-15 14:20:31,231 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (200.5ms)
+2026-04-15 14:20:31,362 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (177.1ms)
+2026-04-15 14:20:31,404 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (190.5ms)
+2026-04-15 14:20:31,419 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (193.3ms)
+2026-04-15 14:20:31,423 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (190.4ms)
+2026-04-15 14:20:31,427 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (201.7ms)
+2026-04-15 14:20:31,547 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (183.0ms)
+2026-04-15 14:20:31,595 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (188.7ms)
+2026-04-15 14:20:31,599 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (176.9ms)
+2026-04-15 14:20:31,603 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (178.7ms)
+2026-04-15 14:20:31,616 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (187.4ms)
+2026-04-15 14:20:31,749 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (200.9ms)
+2026-04-15 14:20:31,786 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (181.1ms)
+2026-04-15 14:20:31,800 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (202.9ms)
+2026-04-15 14:20:31,802 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (200.9ms)
+2026-04-15 14:20:31,804 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (186.8ms)
+2026-04-15 14:20:31,934 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (182.7ms)
+2026-04-15 14:20:31,970 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (181.7ms)
+2026-04-15 14:20:31,992 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (186.0ms)
+2026-04-15 14:20:31,999 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (193.2ms)
+2026-04-15 14:20:32,002 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 415 (198.5ms)
+2026-04-15 14:20:32,130 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (193.7ms)
+2026-04-15 14:20:32,156 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (183.4ms)
+2026-04-15 14:20:32,179 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (184.5ms)
+2026-04-15 14:20:32,186 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (181.4ms)
+2026-04-15 14:20:32,193 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (192.1ms)
+2026-04-15 14:20:32,319 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (187.6ms)
+2026-04-15 14:20:32,349 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (191.3ms)
+2026-04-15 14:20:32,368 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (186.5ms)
+2026-04-15 14:20:32,373 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (185.7ms)
+2026-04-15 14:20:32,384 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (190.3ms)
+2026-04-15 14:20:32,512 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (191.0ms)
+2026-04-15 14:20:32,541 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (190.3ms)
+2026-04-15 14:20:32,561 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (186.5ms)
+2026-04-15 14:20:32,570 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (183.6ms)
+2026-04-15 14:20:32,571 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (199.6ms)
+2026-04-15 14:20:32,719 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (204.7ms)
+2026-04-15 14:20:32,733 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (189.9ms)
+2026-04-15 14:20:32,756 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (191.9ms)
+2026-04-15 14:20:32,759 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (185.3ms)
+2026-04-15 14:20:32,770 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (197.1ms)
+2026-04-15 14:20:32,918 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (182.8ms)
+2026-04-15 14:20:32,921 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (198.7ms)
+2026-04-15 14:20:32,940 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (181.9ms)
+2026-04-15 14:20:32,952 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (191.7ms)
+2026-04-15 14:20:32,960 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (187.8ms)
+2026-04-15 14:20:33,114 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (191.9ms)
+2026-04-15 14:20:33,120 | execution_agent | INFO | [ExecutionAgent] Completed 56/56 without network error
+2026-04-15 14:20:33,122 | validation_agent | INFO | [ValidationAgent] Validating 56 results …
+2026-04-15 14:20:33,133 | validation_agent | INFO | [ValidationAgent] 20 failures detected
+2026-04-15 14:20:33,142 | security_agent | INFO | [SecurityAgent] Scanning 56 results …
+2026-04-15 14:20:36,083 | security_agent | WARNING | LLM security scan failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:20:36,087 | security_agent | INFO | [SecurityAgent] 12 findings (0 critical, 8 high)
+2026-04-15 14:20:36,096 | history | INFO | [History] Saved run 12510c69-e5e
+2026-04-15 14:20:36,116 | reporting_agent | INFO | [ReportingAgent] HTML report → reports/report_20260415_142036.html
+2026-04-15 14:20:36,118 | reporting_agent | INFO | [ReportingAgent] JSON report → reports/report_20260415_142036.json
+2026-04-15 14:33:11,163 | api_understanding_agent | INFO | [APIUnderstandingAgent] Extracting spec from raw description …
+2026-04-15 14:44:48,915 | api_understanding_agent | INFO | [APIUnderstandingAgent] Analyzing API spec …
+2026-04-15 14:44:48,924 | parser | INFO | Parsing spec: Sample Pet Store API
+2026-04-15 14:44:48,925 | parser | INFO | Discovered 8 endpoints
+2026-04-15 14:44:52,369 | api_understanding_agent | WARNING | LLM enrichment failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:44:52,372 | api_understanding_agent | INFO | [APIUnderstandingAgent] 8 endpoints understood (provider: openai)
+2026-04-15 14:44:52,383 | test_generation_agent | INFO | [TestGenerationAgent] Generating tests for 8 endpoints …
+2026-04-15 14:44:55,985 | test_generation_agent | WARNING | LLM creative test generation failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:44:55,990 | test_generation_agent | INFO | [TestGenerationAgent] Generated 56 test cases (provider: openai)
+2026-04-15 14:44:55,994 | execution_agent | INFO | [ExecutionAgent] Running 56 test cases ...
+2026-04-15 14:44:56,324 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (312.9ms)
+2026-04-15 14:44:56,349 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (338.9ms)
+2026-04-15 14:44:56,353 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (354.4ms)
+2026-04-15 14:44:56,355 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (346.1ms)
+2026-04-15 14:44:56,357 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (348.0ms)
+2026-04-15 14:44:56,522 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (194.4ms)
+2026-04-15 14:44:56,542 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (189.5ms)
+2026-04-15 14:44:56,544 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (184.8ms)
+2026-04-15 14:44:56,551 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (194.9ms)
+2026-04-15 14:44:56,554 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (197.4ms)
+2026-04-15 14:44:56,721 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (196.1ms)
+2026-04-15 14:44:56,727 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (181.9ms)
+2026-04-15 14:44:56,739 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (193.4ms)
+2026-04-15 14:44:56,741 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (188.4ms)
+2026-04-15 14:44:56,744 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (188.1ms)
+2026-04-15 14:44:56,909 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (180.5ms)
+2026-04-15 14:44:56,913 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (187.3ms)
+2026-04-15 14:44:56,926 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (181.9ms)
+2026-04-15 14:44:56,928 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (185.8ms)
+2026-04-15 14:44:56,935 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (192.2ms)
+2026-04-15 14:44:57,098 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (187.5ms)
+2026-04-15 14:44:57,106 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (191.0ms)
+2026-04-15 14:44:57,113 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (183.3ms)
+2026-04-15 14:44:57,115 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (185.8ms)
+2026-04-15 14:44:57,123 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (187.2ms)
+2026-04-15 14:44:57,282 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (182.6ms)
+2026-04-15 14:44:57,292 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 415 (178.4ms)
+2026-04-15 14:44:57,304 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (179.6ms)
+2026-04-15 14:44:57,305 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (189.2ms)
+2026-04-15 14:44:57,307 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (199.3ms)
+2026-04-15 14:44:57,459 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (175.6ms)
+2026-04-15 14:44:57,478 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (183.6ms)
+2026-04-15 14:44:57,484 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (177.2ms)
+2026-04-15 14:44:57,491 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (183.2ms)
+2026-04-15 14:44:57,494 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (187.4ms)
+2026-04-15 14:44:57,637 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (176.4ms)
+2026-04-15 14:44:57,667 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (181.7ms)
+2026-04-15 14:44:57,670 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (189.7ms)
+2026-04-15 14:44:57,671 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (176.0ms)
+2026-04-15 14:44:57,679 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (186.6ms)
+2026-04-15 14:44:57,825 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (186.4ms)
+2026-04-15 14:44:57,851 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (182.3ms)
+2026-04-15 14:44:57,857 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (186.5ms)
+2026-04-15 14:44:57,858 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (177.7ms)
+2026-04-15 14:44:57,861 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (188.9ms)
+2026-04-15 14:44:58,013 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (186.6ms)
+2026-04-15 14:44:58,064 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (210.6ms)
+2026-04-15 14:44:58,071 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (210.7ms)
+2026-04-15 14:44:58,094 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (231.0ms)
+2026-04-15 14:44:58,094 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (234.8ms)
+2026-04-15 14:44:58,233 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (217.0ms)
+2026-04-15 14:44:58,279 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (183.2ms)
+2026-04-15 14:44:58,285 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (191.9ms)
+2026-04-15 14:44:58,295 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (204.7ms)
+2026-04-15 14:44:58,299 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (203.2ms)
+2026-04-15 14:44:58,418 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (183.6ms)
+2026-04-15 14:44:58,420 | execution_agent | INFO | [ExecutionAgent] Completed 56/56 without network error
+2026-04-15 14:44:58,422 | validation_agent | INFO | [ValidationAgent] Validating 56 results …
+2026-04-15 14:44:58,428 | validation_agent | INFO | [ValidationAgent] 20 failures detected
+2026-04-15 14:44:58,435 | security_agent | INFO | [SecurityAgent] Scanning 56 results …
+2026-04-15 14:45:02,017 | security_agent | WARNING | LLM security scan failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:45:02,020 | security_agent | INFO | [SecurityAgent] 12 findings (0 critical, 8 high)
+2026-04-15 14:45:02,025 | history | INFO | [History] Saved run db24db81-e51
+2026-04-15 14:45:02,038 | reporting_agent | INFO | [ReportingAgent] HTML report → reports/report_20260415_144502.html
+2026-04-15 14:45:02,040 | reporting_agent | INFO | [ReportingAgent] JSON report → reports/report_20260415_144502.json
+2026-04-15 14:46:17,460 | api_understanding_agent | INFO | [APIUnderstandingAgent] Analyzing API spec …
+2026-04-15 14:46:17,468 | parser | INFO | Parsing spec: Sample Pet Store API
+2026-04-15 14:46:17,469 | parser | INFO | Discovered 8 endpoints
+2026-04-15 14:46:20,852 | api_understanding_agent | WARNING | LLM enrichment failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:46:20,857 | api_understanding_agent | INFO | [APIUnderstandingAgent] 8 endpoints understood (provider: openai)
+2026-04-15 14:46:20,871 | test_generation_agent | INFO | [TestGenerationAgent] Generating tests for 8 endpoints …
+2026-04-15 14:46:23,986 | test_generation_agent | WARNING | LLM creative test generation failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:46:23,991 | test_generation_agent | INFO | [TestGenerationAgent] Generated 56 test cases (provider: openai)
+2026-04-15 14:46:23,994 | execution_agent | INFO | [ExecutionAgent] Running 56 test cases ...
+2026-04-15 14:46:24,294 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (283.4ms)
+2026-04-15 14:46:24,296 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (287.6ms)
+2026-04-15 14:46:24,309 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (299.2ms)
+2026-04-15 14:46:24,311 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (312.9ms)
+2026-04-15 14:46:24,316 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (308.3ms)
+2026-04-15 14:46:24,488 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (188.8ms)
+2026-04-15 14:46:24,491 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (191.1ms)
+2026-04-15 14:46:24,496 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (182.8ms)
+2026-04-15 14:46:24,501 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (188.2ms)
+2026-04-15 14:46:24,507 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (189.0ms)
+2026-04-15 14:46:24,676 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (182.8ms)
+2026-04-15 14:46:24,683 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (180.3ms)
+2026-04-15 14:46:24,686 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (195.9ms)
+2026-04-15 14:46:24,697 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (188.3ms)
+2026-04-15 14:46:24,699 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (201.2ms)
+2026-04-15 14:46:24,869 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (190.4ms)
+2026-04-15 14:46:24,872 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (183.2ms)
+2026-04-15 14:46:24,878 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (193.3ms)
+2026-04-15 14:46:24,880 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (181.6ms)
+2026-04-15 14:46:24,892 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (190.8ms)
+2026-04-15 14:46:25,054 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (181.3ms)
+2026-04-15 14:46:25,061 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (179.5ms)
+2026-04-15 14:46:25,063 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (192.2ms)
+2026-04-15 14:46:25,078 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (197.9ms)
+2026-04-15 14:46:25,095 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (201.5ms)
+2026-04-15 14:46:25,240 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 415 (175.2ms)
+2026-04-15 14:46:25,241 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (185.1ms)
+2026-04-15 14:46:25,250 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (187.7ms)
+2026-04-15 14:46:25,262 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (183.2ms)
+2026-04-15 14:46:25,270 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (174.1ms)
+2026-04-15 14:46:25,417 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (174.7ms)
+2026-04-15 14:46:25,428 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (185.9ms)
+2026-04-15 14:46:25,436 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (184.9ms)
+2026-04-15 14:46:25,445 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (173.6ms)
+2026-04-15 14:46:25,447 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (183.4ms)
+2026-04-15 14:46:25,603 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (185.0ms)
+2026-04-15 14:46:25,605 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (175.1ms)
+2026-04-15 14:46:25,620 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (181.6ms)
+2026-04-15 14:46:25,628 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (181.9ms)
+2026-04-15 14:46:25,630 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (182.4ms)
+2026-04-15 14:46:25,790 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (182.7ms)
+2026-04-15 14:46:25,797 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (191.2ms)
+2026-04-15 14:46:25,810 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (188.0ms)
+2026-04-15 14:46:25,814 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (181.8ms)
+2026-04-15 14:46:25,817 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (186.8ms)
+2026-04-15 14:46:25,978 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (185.3ms)
+2026-04-15 14:46:25,984 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (183.8ms)
+2026-04-15 14:46:26,003 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (190.8ms)
+2026-04-15 14:46:26,005 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (189.1ms)
+2026-04-15 14:46:26,009 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (190.0ms)
+2026-04-15 14:46:26,169 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (182.6ms)
+2026-04-15 14:46:26,180 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (200.1ms)
+2026-04-15 14:46:26,186 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (176.2ms)
+2026-04-15 14:46:26,192 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (184.2ms)
+2026-04-15 14:46:26,202 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (195.5ms)
+2026-04-15 14:46:26,370 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (198.5ms)
+2026-04-15 14:46:26,375 | execution_agent | INFO | [ExecutionAgent] Completed 56/56 without network error
+2026-04-15 14:46:26,378 | validation_agent | INFO | [ValidationAgent] Validating 56 results …
+2026-04-15 14:46:26,398 | validation_agent | INFO | [ValidationAgent] 20 failures detected
+2026-04-15 14:46:26,408 | security_agent | INFO | [SecurityAgent] Scanning 56 results …
+2026-04-15 14:46:29,403 | security_agent | WARNING | LLM security scan failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:46:29,407 | security_agent | INFO | [SecurityAgent] 12 findings (0 critical, 8 high)
+2026-04-15 14:46:29,414 | history | INFO | [History] Saved run 870ace2d-6ab
+2026-04-15 14:46:29,433 | reporting_agent | INFO | [ReportingAgent] HTML report → reports/report_20260415_144629.html
+2026-04-15 14:46:29,435 | reporting_agent | INFO | [ReportingAgent] JSON report → reports/report_20260415_144629.json
+2026-04-15 14:54:53,848 | api_understanding_agent | INFO | [APIUnderstandingAgent] Analyzing API spec …
+2026-04-15 14:54:53,856 | parser | INFO | Parsing spec: JSONPlaceholder API
+2026-04-15 14:54:53,856 | parser | INFO | Discovered 10 endpoints
+2026-04-15 14:54:57,235 | api_understanding_agent | WARNING | LLM enrichment failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:54:57,239 | api_understanding_agent | INFO | [APIUnderstandingAgent] 10 endpoints understood (provider: openai)
+2026-04-15 14:54:57,252 | test_generation_agent | INFO | [TestGenerationAgent] Generating tests for 10 endpoints …
+2026-04-15 14:55:00,520 | test_generation_agent | WARNING | LLM creative test generation failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:55:00,523 | test_generation_agent | INFO | [TestGenerationAgent] Generated 77 test cases (provider: openai)
+2026-04-15 14:55:00,526 | execution_agent | INFO | [ExecutionAgent] Running 77 test cases ...
+2026-04-15 14:55:00,798 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts → 200 (255.9ms)
+2026-04-15 14:55:00,803 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts → 200 (270.0ms)
+2026-04-15 14:55:00,804 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts → 200 (260.6ms)
+2026-04-15 14:55:00,805 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts → 200 (264.1ms)
+2026-04-15 14:55:00,807 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts → 200 (263.6ms)
+2026-04-15 14:55:00,982 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (173.1ms)
+2026-04-15 14:55:00,991 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (181.8ms)
+2026-04-15 14:55:00,994 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (191.6ms)
+2026-04-15 14:55:00,997 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (185.9ms)
+2026-04-15 14:55:01,031 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (221.3ms)
+2026-04-15 14:55:01,142 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (158.6ms)
+2026-04-15 14:55:01,155 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (158.7ms)
+2026-04-15 14:55:01,158 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (165.5ms)
+2026-04-15 14:55:01,199 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (165.4ms)
+2026-04-15 14:55:01,217 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (219.0ms)
+2026-04-15 14:55:01,300 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (155.7ms)
+2026-04-15 14:55:01,320 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (163.5ms)
+2026-04-15 14:55:01,325 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (164.7ms)
+2026-04-15 14:55:01,360 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (160.4ms)
+2026-04-15 14:55:01,378 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (159.3ms)
+2026-04-15 14:55:01,460 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (158.4ms)
+2026-04-15 14:55:01,483 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (157.3ms)
+2026-04-15 14:55:01,485 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (163.8ms)
+2026-04-15 14:55:01,522 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (160.0ms)
+2026-04-15 14:55:01,542 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (163.0ms)
+2026-04-15 14:55:01,626 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (163.9ms)
+2026-04-15 14:55:01,713 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts/{id} → 404 (169.5ms)
+2026-04-15 14:55:01,718 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts/{id} → 404 (194.7ms)
+2026-04-15 14:55:01,720 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts/{id} → 404 (232.8ms)
+2026-04-15 14:55:01,721 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts/{id} → 404 (235.9ms)
+2026-04-15 14:55:01,775 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts/{id} → 404 (147.2ms)
+2026-04-15 14:55:01,890 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (172.6ms)
+2026-04-15 14:55:01,900 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (175.4ms)
+2026-04-15 14:55:01,903 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (179.0ms)
+2026-04-15 14:55:01,906 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (183.6ms)
+2026-04-15 14:55:01,943 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (165.6ms)
+2026-04-15 14:55:02,061 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (167.8ms)
+2026-04-15 14:55:02,080 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (171.3ms)
+2026-04-15 14:55:02,082 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (175.8ms)
+2026-04-15 14:55:02,085 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (175.9ms)
+2026-04-15 14:55:02,122 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (176.9ms)
+2026-04-15 14:55:02,229 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (165.3ms)
+2026-04-15 14:55:02,249 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (165.9ms)
+2026-04-15 14:55:02,263 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (178.7ms)
+2026-04-15 14:55:02,264 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (177.8ms)
+2026-04-15 14:55:02,297 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (172.2ms)
+2026-04-15 14:55:02,394 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (163.5ms)
+2026-04-15 14:55:02,413 | executor | DEBUG | DELETE https://jsonplaceholder.typicode.com/posts/{id} → 200 (162.8ms)
+2026-04-15 14:55:02,424 | executor | DEBUG | DELETE https://jsonplaceholder.typicode.com/posts/{id} → 200 (158.0ms)
+2026-04-15 14:55:02,429 | executor | DEBUG | DELETE https://jsonplaceholder.typicode.com/posts/{id} → 200 (162.4ms)
+2026-04-15 14:55:02,459 | executor | DEBUG | DELETE https://jsonplaceholder.typicode.com/posts/{id} → 200 (160.5ms)
+2026-04-15 14:55:02,558 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users → 200 (143.0ms)
+2026-04-15 14:55:02,562 | executor | DEBUG | DELETE https://jsonplaceholder.typicode.com/posts/{id} → 200 (166.0ms)
+2026-04-15 14:55:02,577 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users → 200 (152.2ms)
+2026-04-15 14:55:02,579 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users → 200 (148.8ms)
+2026-04-15 14:55:02,606 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users → 200 (145.7ms)
+2026-04-15 14:55:02,715 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users → 200 (155.1ms)
+2026-04-15 14:55:02,777 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users/{id} → 404 (168.9ms)
+2026-04-15 14:55:02,780 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users/{id} → 404 (199.7ms)
+2026-04-15 14:55:02,781 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users/{id} → 404 (199.9ms)
+2026-04-15 14:55:02,782 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users/{id} → 404 (218.6ms)
+2026-04-15 14:55:02,876 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users/{id} → 404 (159.6ms)
+2026-04-15 14:55:02,940 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/comments → 200 (156.2ms)
+2026-04-15 14:55:02,945 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/comments → 200 (159.9ms)
+2026-04-15 14:55:02,946 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/comments → 200 (160.9ms)
+2026-04-15 14:55:02,974 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/comments → 200 (190.1ms)
+2026-04-15 14:55:03,030 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/comments → 200 (151.3ms)
+2026-04-15 14:55:03,090 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos → 200 (147.4ms)
+2026-04-15 14:55:03,096 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos → 200 (147.9ms)
+2026-04-15 14:55:03,100 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos → 200 (151.9ms)
+2026-04-15 14:55:03,125 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos → 200 (149.4ms)
+2026-04-15 14:55:03,184 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos → 200 (152.1ms)
+2026-04-15 14:55:03,322 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos/{id} → 404 (195.7ms)
+2026-04-15 14:55:03,325 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos/{id} → 404 (227.1ms)
+2026-04-15 14:55:03,327 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos/{id} → 404 (225.2ms)
+2026-04-15 14:55:03,328 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos/{id} → 404 (235.7ms)
+2026-04-15 14:55:03,330 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos/{id} → 404 (145.0ms)
+2026-04-15 14:55:03,332 | execution_agent | INFO | [ExecutionAgent] Completed 77/77 without network error
+2026-04-15 14:55:03,334 | validation_agent | INFO | [ValidationAgent] Validating 77 results …
+2026-04-15 14:55:03,353 | validation_agent | INFO | [ValidationAgent] 48 failures detected
+2026-04-15 14:55:03,358 | security_agent | INFO | [SecurityAgent] Scanning 77 results …
+2026-04-15 14:55:06,167 | security_agent | WARNING | LLM security scan failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:55:06,170 | security_agent | INFO | [SecurityAgent] 16 findings (0 critical, 10 high)
+2026-04-15 14:55:06,180 | history | INFO | [History] Saved run 8115d408-f41
+2026-04-15 14:55:06,200 | reporting_agent | INFO | [ReportingAgent] HTML report → reports/report_20260415_145506.html
+2026-04-15 14:55:06,202 | reporting_agent | INFO | [ReportingAgent] JSON report → reports/report_20260415_145506.json
+2026-04-15 14:55:09,336 | app | INFO | [Reset] All reports and history cleared
+2026-04-15 14:55:19,042 | api_understanding_agent | INFO | [APIUnderstandingAgent] Analyzing API spec …
+2026-04-15 14:55:19,050 | parser | INFO | Parsing spec: JSONPlaceholder API
+2026-04-15 14:55:19,050 | parser | INFO | Discovered 10 endpoints
+2026-04-15 14:55:22,038 | api_understanding_agent | WARNING | LLM enrichment failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:55:22,040 | api_understanding_agent | INFO | [APIUnderstandingAgent] 10 endpoints understood (provider: openai)
+2026-04-15 14:55:22,049 | test_generation_agent | INFO | [TestGenerationAgent] Generating tests for 10 endpoints …
+2026-04-15 14:55:25,005 | test_generation_agent | WARNING | LLM creative test generation failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:55:25,007 | test_generation_agent | INFO | [TestGenerationAgent] Generated 77 test cases (provider: openai)
+2026-04-15 14:55:25,008 | execution_agent | INFO | [ExecutionAgent] Running 77 test cases ...
+2026-04-15 14:55:25,164 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts → 200 (148.8ms)
+2026-04-15 14:55:25,170 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts → 200 (159.7ms)
+2026-04-15 14:55:25,172 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts → 200 (156.2ms)
+2026-04-15 14:55:25,175 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts → 200 (158.7ms)
+2026-04-15 14:55:25,177 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts → 200 (161.0ms)
+2026-04-15 14:55:25,323 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (157.9ms)
+2026-04-15 14:55:25,337 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (162.9ms)
+2026-04-15 14:55:25,344 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (171.6ms)
+2026-04-15 14:55:25,346 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (166.6ms)
+2026-04-15 14:55:25,402 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (223.6ms)
+2026-04-15 14:55:25,483 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (157.7ms)
+2026-04-15 14:55:25,494 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (155.5ms)
+2026-04-15 14:55:25,510 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (162.2ms)
+2026-04-15 14:55:25,553 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (205.2ms)
+2026-04-15 14:55:25,559 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (156.0ms)
+2026-04-15 14:55:25,651 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (166.5ms)
+2026-04-15 14:55:25,655 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (159.9ms)
+2026-04-15 14:55:25,668 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (156.3ms)
+2026-04-15 14:55:25,717 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (159.0ms)
+2026-04-15 14:55:25,727 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (166.3ms)
+2026-04-15 14:55:25,812 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (159.5ms)
+2026-04-15 14:55:25,821 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (164.9ms)
+2026-04-15 14:55:25,834 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (164.0ms)
+2026-04-15 14:55:25,879 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (160.1ms)
+2026-04-15 14:55:25,891 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (159.9ms)
+2026-04-15 14:55:25,970 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts/{id} → 404 (148.3ms)
+2026-04-15 14:55:25,978 | executor | DEBUG | POST https://jsonplaceholder.typicode.com/posts → 201 (164.9ms)
+2026-04-15 14:55:25,983 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts/{id} → 404 (147.4ms)
+2026-04-15 14:55:26,046 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts/{id} → 404 (165.1ms)
+2026-04-15 14:55:26,047 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts/{id} → 404 (153.6ms)
+2026-04-15 14:55:26,119 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/posts/{id} → 404 (146.7ms)
+2026-04-15 14:55:26,142 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (163.1ms)
+2026-04-15 14:55:26,145 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (160.8ms)
+2026-04-15 14:55:26,225 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (177.3ms)
+2026-04-15 14:55:26,227 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (178.9ms)
+2026-04-15 14:55:26,296 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (176.0ms)
+2026-04-15 14:55:26,310 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (166.2ms)
+2026-04-15 14:55:26,318 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (170.6ms)
+2026-04-15 14:55:26,403 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (173.8ms)
+2026-04-15 14:55:26,406 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (177.2ms)
+2026-04-15 14:55:26,475 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (175.8ms)
+2026-04-15 14:55:26,486 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (173.5ms)
+2026-04-15 14:55:26,489 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (168.9ms)
+2026-04-15 14:55:26,573 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (167.6ms)
+2026-04-15 14:55:26,576 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (168.6ms)
+2026-04-15 14:55:26,653 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (176.7ms)
+2026-04-15 14:55:26,655 | executor | DEBUG | DELETE https://jsonplaceholder.typicode.com/posts/{id} → 200 (164.6ms)
+2026-04-15 14:55:26,658 | executor | DEBUG | PUT https://jsonplaceholder.typicode.com/posts/{id} → 500 (169.6ms)
+2026-04-15 14:55:26,743 | executor | DEBUG | DELETE https://jsonplaceholder.typicode.com/posts/{id} → 200 (168.2ms)
+2026-04-15 14:55:26,746 | executor | DEBUG | DELETE https://jsonplaceholder.typicode.com/posts/{id} → 200 (168.7ms)
+2026-04-15 14:55:26,814 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users → 200 (155.0ms)
+2026-04-15 14:55:26,823 | executor | DEBUG | DELETE https://jsonplaceholder.typicode.com/posts/{id} → 200 (167.1ms)
+2026-04-15 14:55:26,836 | executor | DEBUG | DELETE https://jsonplaceholder.typicode.com/posts/{id} → 200 (178.8ms)
+2026-04-15 14:55:26,901 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users → 200 (153.2ms)
+2026-04-15 14:55:26,902 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users → 200 (156.0ms)
+2026-04-15 14:55:26,970 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users → 200 (154.3ms)
+2026-04-15 14:55:26,980 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users → 200 (155.2ms)
+2026-04-15 14:55:26,985 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users/{id} → 404 (147.7ms)
+2026-04-15 14:55:27,052 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users/{id} → 404 (148.3ms)
+2026-04-15 14:55:27,061 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users/{id} → 404 (157.7ms)
+2026-04-15 14:55:27,117 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users/{id} → 404 (145.6ms)
+2026-04-15 14:55:27,134 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/comments → 200 (147.2ms)
+2026-04-15 14:55:27,138 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/users/{id} → 404 (153.6ms)
+2026-04-15 14:55:27,235 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/comments → 200 (182.2ms)
+2026-04-15 14:55:27,243 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/comments → 200 (180.3ms)
+2026-04-15 14:55:27,289 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/comments → 200 (170.3ms)
+2026-04-15 14:55:27,308 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos → 200 (169.3ms)
+2026-04-15 14:55:27,312 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/comments → 200 (174.2ms)
+2026-04-15 14:55:27,410 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos → 200 (168.3ms)
+2026-04-15 14:55:27,412 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos → 200 (167.9ms)
+2026-04-15 14:55:27,451 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos → 200 (161.3ms)
+2026-04-15 14:55:27,462 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos/{id} → 404 (149.0ms)
+2026-04-15 14:55:27,478 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos → 200 (167.5ms)
+2026-04-15 14:55:27,562 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos/{id} → 404 (148.6ms)
+2026-04-15 14:55:27,564 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos/{id} → 404 (150.5ms)
+2026-04-15 14:55:27,597 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos/{id} → 404 (144.9ms)
+2026-04-15 14:55:27,601 | executor | DEBUG | GET https://jsonplaceholder.typicode.com/todos/{id} → 404 (138.3ms)
+2026-04-15 14:55:27,603 | execution_agent | INFO | [ExecutionAgent] Completed 77/77 without network error
+2026-04-15 14:55:27,604 | validation_agent | INFO | [ValidationAgent] Validating 77 results …
+2026-04-15 14:55:27,623 | validation_agent | INFO | [ValidationAgent] 48 failures detected
+2026-04-15 14:55:27,629 | security_agent | INFO | [SecurityAgent] Scanning 77 results …
+2026-04-15 14:55:30,797 | security_agent | WARNING | LLM security scan failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:55:30,801 | security_agent | INFO | [SecurityAgent] 16 findings (0 critical, 10 high)
+2026-04-15 14:55:30,815 | history | INFO | [History] Saved run 672f2365-58f
+2026-04-15 14:55:30,832 | reporting_agent | INFO | [ReportingAgent] HTML report → reports/report_20260415_145530.html
+2026-04-15 14:55:30,834 | reporting_agent | INFO | [ReportingAgent] JSON report → reports/report_20260415_145530.json
+2026-04-15 14:58:19,477 | api_understanding_agent | INFO | [APIUnderstandingAgent] Analyzing API spec …
+2026-04-15 14:58:19,486 | parser | INFO | Parsing spec: Sample Pet Store API
+2026-04-15 14:58:19,486 | parser | INFO | Discovered 8 endpoints
+2026-04-15 14:58:22,749 | api_understanding_agent | WARNING | LLM enrichment failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:58:22,752 | api_understanding_agent | INFO | [APIUnderstandingAgent] 8 endpoints understood (provider: openai)
+2026-04-15 14:58:22,767 | test_generation_agent | INFO | [TestGenerationAgent] Generating tests for 8 endpoints …
+2026-04-15 14:58:25,681 | test_generation_agent | WARNING | LLM creative test generation failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:58:25,688 | test_generation_agent | INFO | [TestGenerationAgent] Generated 56 test cases (provider: openai)
+2026-04-15 14:58:25,691 | execution_agent | INFO | [ExecutionAgent] Running 56 test cases ...
+2026-04-15 14:58:26,033 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (326.3ms)
+2026-04-15 14:58:26,045 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (338.5ms)
+2026-04-15 14:58:26,049 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (341.9ms)
+2026-04-15 14:58:26,053 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (347.6ms)
+2026-04-15 14:58:26,056 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (358.9ms)
+2026-04-15 14:58:26,224 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (187.7ms)
+2026-04-15 14:58:26,231 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (183.2ms)
+2026-04-15 14:58:26,240 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (187.6ms)
+2026-04-15 14:58:26,242 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (187.8ms)
+2026-04-15 14:58:26,247 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (189.7ms)
+2026-04-15 14:58:26,408 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (182.0ms)
+2026-04-15 14:58:26,411 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (177.9ms)
+2026-04-15 14:58:26,422 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (177.9ms)
+2026-04-15 14:58:26,431 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (189.1ms)
+2026-04-15 14:58:26,436 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (187.4ms)
+2026-04-15 14:58:26,595 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (185.1ms)
+2026-04-15 14:58:26,598 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (185.4ms)
+2026-04-15 14:58:26,609 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (176.7ms)
+2026-04-15 14:58:26,611 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (187.4ms)
+2026-04-15 14:58:26,625 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (188.1ms)
+2026-04-15 14:58:26,777 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (176.9ms)
+2026-04-15 14:58:26,779 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (182.4ms)
+2026-04-15 14:58:26,786 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (173.5ms)
+2026-04-15 14:58:26,790 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (177.4ms)
+2026-04-15 14:58:26,802 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (175.7ms)
+2026-04-15 14:58:26,956 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (177.4ms)
+2026-04-15 14:58:26,962 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (181.3ms)
+2026-04-15 14:58:26,966 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (174.5ms)
+2026-04-15 14:58:26,972 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 415 (185.1ms)
+2026-04-15 14:58:26,977 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (173.9ms)
+2026-04-15 14:58:27,151 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (182.9ms)
+2026-04-15 14:58:27,153 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (195.3ms)
+2026-04-15 14:58:27,158 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (184.3ms)
+2026-04-15 14:58:27,159 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (194.8ms)
+2026-04-15 14:58:27,167 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (188.9ms)
+2026-04-15 14:58:27,337 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (184.9ms)
+2026-04-15 14:58:27,341 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (185.5ms)
+2026-04-15 14:58:27,349 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (187.3ms)
+2026-04-15 14:58:27,351 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (189.7ms)
+2026-04-15 14:58:27,358 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (189.3ms)
+2026-04-15 14:58:27,524 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (184.9ms)
+2026-04-15 14:58:27,528 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (184.6ms)
+2026-04-15 14:58:27,534 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (181.7ms)
+2026-04-15 14:58:27,542 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (190.1ms)
+2026-04-15 14:58:27,544 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (184.3ms)
+2026-04-15 14:58:27,722 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (192.6ms)
+2026-04-15 14:58:27,732 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (205.5ms)
+2026-04-15 14:58:27,739 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (193.8ms)
+2026-04-15 14:58:27,742 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (196.3ms)
+2026-04-15 14:58:27,743 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (207.1ms)
+2026-04-15 14:58:27,910 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (185.0ms)
+2026-04-15 14:58:27,917 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (182.8ms)
+2026-04-15 14:58:27,927 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (181.2ms)
+2026-04-15 14:58:27,934 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (189.1ms)
+2026-04-15 14:58:27,936 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (195.6ms)
+2026-04-15 14:58:28,116 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (202.3ms)
+2026-04-15 14:58:28,120 | execution_agent | INFO | [ExecutionAgent] Completed 56/56 without network error
+2026-04-15 14:58:28,124 | validation_agent | INFO | [ValidationAgent] Validating 56 results …
+2026-04-15 14:58:28,135 | validation_agent | INFO | [ValidationAgent] 20 failures detected
+2026-04-15 14:58:28,143 | security_agent | INFO | [SecurityAgent] Scanning 56 results …
+2026-04-15 14:58:31,477 | security_agent | WARNING | LLM security scan failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 14:58:31,481 | security_agent | INFO | [SecurityAgent] 12 findings (0 critical, 8 high)
+2026-04-15 14:58:31,492 | history | INFO | [History] Saved run 89b1498d-48e
+2026-04-15 14:58:31,510 | reporting_agent | INFO | [ReportingAgent] HTML report → reports/report_20260415_145831.html
+2026-04-15 14:58:31,512 | reporting_agent | INFO | [ReportingAgent] JSON report → reports/report_20260415_145831.json
+2026-04-15 15:11:50,675 | api_understanding_agent | INFO | [APIUnderstandingAgent] Extracting spec from raw description …
+2026-04-15 15:19:14,558 | api_understanding_agent | INFO | [APIUnderstandingAgent] Extracting spec from raw description …
+2026-04-15 15:21:12,516 | api_understanding_agent | INFO | [APIUnderstandingAgent] Analyzing API spec …
+2026-04-15 15:21:12,525 | parser | INFO | Parsing spec: Sample Pet Store API
+2026-04-15 15:21:12,525 | parser | INFO | Discovered 8 endpoints
+2026-04-15 15:21:15,791 | api_understanding_agent | WARNING | LLM enrichment failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 15:21:15,795 | api_understanding_agent | INFO | [APIUnderstandingAgent] 8 endpoints understood (provider: openai)
+2026-04-15 15:21:15,807 | test_generation_agent | INFO | [TestGenerationAgent] Generating tests for 8 endpoints …
+2026-04-15 15:21:18,868 | test_generation_agent | WARNING | LLM creative test generation failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 15:21:18,871 | test_generation_agent | INFO | [TestGenerationAgent] Generated 56 test cases (provider: openai)
+2026-04-15 15:21:18,874 | execution_agent | INFO | [ExecutionAgent] Running 56 test cases ...
+2026-04-15 15:21:19,191 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (305.3ms)
+2026-04-15 15:21:19,217 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (327.9ms)
+2026-04-15 15:21:19,220 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (332.2ms)
+2026-04-15 15:21:19,224 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (346.4ms)
+2026-04-15 15:21:19,225 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet → 405 (338.0ms)
+2026-04-15 15:21:19,382 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (187.8ms)
+2026-04-15 15:21:19,411 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (187.8ms)
+2026-04-15 15:21:19,416 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (189.2ms)
+2026-04-15 15:21:19,424 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (196.3ms)
+2026-04-15 15:21:19,427 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (208.0ms)
+2026-04-15 15:21:19,567 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (182.8ms)
+2026-04-15 15:21:19,603 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (184.7ms)
+2026-04-15 15:21:19,609 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (195.2ms)
+2026-04-15 15:21:19,618 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (192.4ms)
+2026-04-15 15:21:19,620 | executor | DEBUG | DELETE https://petstore3.swagger.io/api/v3/pet/{petId} → 400 (190.7ms)
+2026-04-15 15:21:19,758 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (189.1ms)
+2026-04-15 15:21:19,795 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (189.9ms)
+2026-04-15 15:21:19,805 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (193.9ms)
+2026-04-15 15:21:19,808 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (186.8ms)
+2026-04-15 15:21:19,813 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/pet/findByStatus → 400 (190.8ms)
+2026-04-15 15:21:19,953 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (192.0ms)
+2026-04-15 15:21:19,992 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (194.4ms)
+2026-04-15 15:21:19,996 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (182.2ms)
+2026-04-15 15:21:20,005 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (198.2ms)
+2026-04-15 15:21:20,008 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/store/inventory → 500 (198.6ms)
+2026-04-15 15:21:20,144 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (189.1ms)
+2026-04-15 15:21:20,177 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 415 (179.2ms)
+2026-04-15 15:21:20,187 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (191.9ms)
+2026-04-15 15:21:20,188 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (181.4ms)
+2026-04-15 15:21:20,197 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (186.8ms)
+2026-04-15 15:21:20,326 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (179.6ms)
+2026-04-15 15:21:20,367 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (187.6ms)
+2026-04-15 15:21:20,373 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (184.2ms)
+2026-04-15 15:21:20,381 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (182.8ms)
+2026-04-15 15:21:20,383 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (193.2ms)
+2026-04-15 15:21:20,512 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (184.7ms)
+2026-04-15 15:21:20,552 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (182.4ms)
+2026-04-15 15:21:20,573 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (197.1ms)
+2026-04-15 15:21:20,576 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (191.6ms)
+2026-04-15 15:21:20,577 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (194.7ms)
+2026-04-15 15:21:20,727 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (213.0ms)
+2026-04-15 15:21:20,750 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (194.3ms)
+2026-04-15 15:21:20,770 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (190.8ms)
+2026-04-15 15:21:20,784 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 200 (208.0ms)
+2026-04-15 15:21:20,785 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (205.2ms)
+2026-04-15 15:21:20,908 | executor | DEBUG | POST https://petstore3.swagger.io/api/v3/store/order → 400 (178.3ms)
+2026-04-15 15:21:20,938 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (186.0ms)
+2026-04-15 15:21:20,962 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (189.6ms)
+2026-04-15 15:21:20,968 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (180.9ms)
+2026-04-15 15:21:20,977 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (189.2ms)
+2026-04-15 15:21:21,091 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/login → 200 (181.8ms)
+2026-04-15 15:21:21,122 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (182.0ms)
+2026-04-15 15:21:21,157 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (187.4ms)
+2026-04-15 15:21:21,159 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (195.2ms)
+2026-04-15 15:21:21,165 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (186.8ms)
+2026-04-15 15:21:21,278 | executor | DEBUG | GET https://petstore3.swagger.io/api/v3/user/{username} → 500 (184.9ms)
+2026-04-15 15:21:21,283 | execution_agent | INFO | [ExecutionAgent] Completed 56/56 without network error
+2026-04-15 15:21:21,286 | validation_agent | INFO | [ValidationAgent] Validating 56 results …
+2026-04-15 15:21:21,294 | validation_agent | INFO | [ValidationAgent] 20 failures detected
+2026-04-15 15:21:21,304 | security_agent | INFO | [SecurityAgent] Scanning 56 results …
+2026-04-15 15:21:24,381 | security_agent | WARNING | LLM security scan failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-04-15 15:21:24,385 | security_agent | INFO | [SecurityAgent] 12 findings (0 critical, 8 high)
+2026-04-15 15:21:24,393 | history | INFO | [History] Saved run fcfca51d-083
+2026-04-15 15:21:24,414 | reporting_agent | INFO | [ReportingAgent] HTML report → reports/report_20260415_152124.html
+2026-04-15 15:21:24,415 | reporting_agent | INFO | [ReportingAgent] JSON report → reports/report_20260415_152124.json

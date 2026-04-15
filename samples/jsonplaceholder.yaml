@@ -1,0 +1,121 @@
+openapi: 3.0.0
+info:
+  title: JSONPlaceholder API
+  version: 1.0.0
+servers:
+  - url: https://jsonplaceholder.typicode.com
+paths:
+  /posts:
+    get:
+      summary: Get all posts
+      tags: [posts]
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create post
+      tags: [posts]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title: {type: string}
+                body: {type: string}
+                userId: {type: integer}
+      responses:
+        '201':
+          description: Created
+  /posts/{id}:
+    get:
+      summary: Get post by ID
+      tags: [posts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: {type: integer}
+      responses:
+        '200':
+          description: OK
+    put:
+      summary: Update post
+      tags: [posts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: {type: integer}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title: {type: string}
+                body: {type: string}
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Delete post
+      tags: [posts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: {type: integer}
+      responses:
+        '200':
+          description: OK
+  /users:
+    get:
+      summary: Get all users
+      tags: [users]
+      responses:
+        '200':
+          description: OK
+  /users/{id}:
+    get:
+      summary: Get user by ID
+      tags: [users]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: {type: integer}
+      responses:
+        '200':
+          description: OK
+  /comments:
+    get:
+      summary: Get all comments
+      tags: [comments]
+      parameters:
+        - name: postId
+          in: query
+          required: false
+          schema: {type: integer}
+      responses:
+        '200':
+          description: OK
+  /todos:
+    get:
+      summary: Get all todos
+      tags: [todos]
+      responses:
+        '200':
+          description: OK
+  /todos/{id}:
+    get:
+      summary: Get todo by ID
+      tags: [todos]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: {type: integer}
+      responses:
+        '200':
+          description: OK

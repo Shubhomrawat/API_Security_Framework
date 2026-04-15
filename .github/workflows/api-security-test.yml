@@ -1,0 +1,180 @@
+# .github/workflows/api-security-test.yml
+# Runs the full AI API security testing pipeline on every push/PR
+# and uploads the HTML report as an artifact.
+
+name: AI API Security Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Run nightly at 02:00 UTC against staging
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      spec_path:
+        description: "Path to OpenAPI spec file"
+        required: false
+        default: "samples/petstore.yaml"
+      provider:
+        description: "LLM provider (openai | anthropic)"
+        required: false
+        default: "openai"
+      base_url:
+        description: "Override base URL (leave blank to use spec default)"
+        required: false
+        default: ""
+
+jobs:
+  api-security-test:
+    name: Run AI API Security Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Determine spec path
+        id: spec
+        run: |
+          SPEC="${{ github.event.inputs.spec_path || 'samples/petstore.yaml' }}"
+          echo "path=$SPEC" >> $GITHUB_OUTPUT
+
+      - name: Determine base URL flag
+        id: baseurl
+        run: |
+          BASE="${{ github.event.inputs.base_url }}"
+          if [ -n "$BASE" ]; then
+            echo "flag=--base-url $BASE" >> $GITHUB_OUTPUT
+          else
+            echo "flag=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run AI API security tests
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LLM_PROVIDER: ${{ github.event.inputs.provider || 'openai' }}
+        run: |
+          python run.py \
+            --spec "${{ steps.spec.outputs.path }}" \
+            ${{ steps.baseurl.outputs.flag }} \
+            --provider "${{ github.event.inputs.provider || 'openai' }}" \
+            --output reports
+
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: api-security-report-${{ github.run_number }}
+          path: reports/
+          retention-days: 30
+
+      - name: Upload JSON report (for downstream parsing)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: api-security-report-json-${{ github.run_number }}
+          path: reports/*.json
+          retention-days: 90
+
+      - name: Parse report for critical findings
+        if: always()
+        run: |
+          python - << 'PYEOF'
+          import json, glob, sys, os
+
+          reports = sorted(glob.glob("reports/*.json"), reverse=True)
+          if not reports:
+              print("No report found.")
+              sys.exit(0)
+
+          with open(reports[0]) as f:
+              data = json.load(f)
+
+          summary = data.get("summary", {})
+          findings = data.get("security_findings", [])
+          diff = data.get("diff_vs_previous")
+
+          print(f"\n{'='*60}")
+          print(f"  Run ID:   {data.get('run_id', 'N/A')}")
+          print(f"  Provider: {data.get('provider', 'N/A')} / {data.get('model', 'N/A')}")
+          print(f"  Total:    {summary.get('total', 0)}")
+          print(f"  Passed:   {summary.get('passed', 0)}")
+          print(f"  Failed:   {summary.get('failed', 0)}")
+          print(f"  Pass Rate:{summary.get('pass_rate', 0)}%")
+          print(f"  Findings: {len(findings)}")
+
+          if diff:
+              print(f"\n  Trend vs previous: {diff['overall_trend'].upper()}")
+              print(f"  Pass rate delta:    {diff['pass_rate_delta']:+.1f}%")
+              print(f"  Findings delta:     {diff['findings_delta']:+d}")
+              if diff.get("new_vulnerabilities"):
+                  print(f"  NEW findings: {', '.join(diff['new_vulnerabilities'])}")
+
+          criticals = [f for f in findings if f.get("severity") == "critical"]
+          if criticals:
+              print(f"\n  ⚠️  {len(criticals)} CRITICAL findings:")
+              for f in criticals:
+                  print(f"    [{f['owasp_id']}] {f['title']} @ {f['method']} {f['endpoint']}")
+                  print(f"    Confidence: {int(f.get('confidence',0)*100)}% — {f.get('confidence_reason','')}")
+
+          print(f"{'='*60}\n")
+
+          # Fail the CI job if new critical findings appeared
+          if diff and diff.get("new_vulnerabilities"):
+              new_crits = [
+                  f for f in criticals
+                  if f.get("owasp_id") in diff["new_vulnerabilities"]
+              ]
+              if new_crits:
+                  print(f"::error::New CRITICAL security findings detected: {[f['owasp_id'] for f in new_crits]}")
+                  sys.exit(1)
+          PYEOF
+
+      - name: Comment PR with summary
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const glob = require('glob');
+            const reports = glob.sync('reports/*.json').sort().reverse();
+            if (!reports.length) return;
+            const data = JSON.parse(fs.readFileSync(reports[0], 'utf8'));
+            const s = data.summary;
+            const diff = data.diff_vs_previous;
+            let body = `## 🔬 API Security Test Results\n\n`;
+            body += `| Metric | Value |\n|---|---|\n`;
+            body += `| Provider | ${data.provider} / ${data.model} |\n`;
+            body += `| Total Tests | ${s.total} |\n`;
+            body += `| Passed | ✅ ${s.passed} |\n`;
+            body += `| Failed | ❌ ${s.failed} |\n`;
+            body += `| Pass Rate | ${s.pass_rate}% |\n`;
+            body += `| Security Findings | ⚠️ ${data.security_findings?.length ?? 0} |\n`;
+            if (diff) {
+              const icon = diff.overall_trend === 'improved' ? '✅' : diff.overall_trend === 'regressed' ? '🔴' : '➡️';
+              body += `\n**Posture Trend:** ${icon} ${diff.overall_trend.toUpperCase()}`;
+              body += ` | Pass rate: ${diff.pass_rate_delta > 0 ? '+' : ''}${diff.pass_rate_delta}%`;
+              if (diff.new_vulnerabilities?.length) body += `\n⚠️ **New vulnerabilities:** ${diff.new_vulnerabilities.join(', ')}`;
+              if (diff.fixed_vulnerabilities?.length) body += `\n✅ **Fixed:** ${diff.fixed_vulnerabilities.join(', ')}`;
+            }
+            body += `\n\n[Full report in artifacts](${context.payload.pull_request.html_url}/checks)`;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            });
